@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: ${PORT8080}
 spring:
   application:
     name: finguard
@@ -15,5 +15,5 @@ spring:
     show-sql: false
   h2:
     console:
-      enabled: true
+      enabled: false
       path: /h2-console
