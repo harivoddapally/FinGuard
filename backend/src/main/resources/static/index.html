@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FinGuard | Risk Intelligence</title><link rel="stylesheet" href="/styles.css"></head>
+<body><aside class="sidebar"><div class="brand"><span class="logo">F</span><div><b>FinGuard</b><small>RISK INTELLIGENCE</small></div></div>
+<nav><a class="active" href="#overview">▦ &nbsp; Overview</a><a href="#transactions">⇄ &nbsp; Transactions</a><a href="#audit">◷ &nbsp; Audit log</a></nav>
+<div class="side-note"><span class="pulse"></span> Demo environment <small>Rules engine active</small></div></aside>
+<main><header><div><p class="eyebrow">MONITORING CENTER / INDIA</p><h1>Risk overview</h1><p class="muted">Real-time visibility into transaction activity and fraud signals.</p></div><div class="user"><span class="avatar">A</span><span><b>Analyst workspace</b><small>Demo account</small></span></div></header>
+<section class="metrics" id="overview"><article class="metric"><span>Total transactions</span><strong id="total">—</strong><small>Monitored records</small></article><article class="metric"><span>High-risk alerts</span><strong id="high" class="red">—</strong><small>Require attention</small></article><article class="metric"><span>Medium risk</span><strong id="medium" class="amber">—</strong><small>Review recommended</small></article><article class="metric"><span>Monitored volume</span><strong id="volume">—</strong><small>Transaction value (INR)</small></article></section>
+<section class="panel"><div class="panel-head"><div><h2>Transaction activity</h2><p class="muted">Risk-scored payments and analyst decisions</p></div><button id="openModal">+ Score transaction</button></div>
+<div class="filters"><input id="search" placeholder="Search customer, merchant or ID…"><select id="riskFilter"><option value="">All risk levels</option><option>HIGH</option><option>MEDIUM</option><option>LOW</option></select></div>
+<div class="table-wrap"><table><thead><tr><th>TRANSACTION</th><th>CUSTOMER</th><th>MERCHANT</th><th>AMOUNT</th><th>RISK</th><th>REVIEW</th><th>ACTION</th></tr></thead><tbody id="rows"></tbody></table></div></section>
+<section class="panel" id="audit"><div class="panel-head"><div><h2>Audit trail</h2><p class="muted">Recent scoring and review events</p></div></div><div id="auditRows" class="audit-list"></div></section>
+</main>
+<div class="modal hidden" id="modal"><form id="txForm" class="dialog"><div class="panel-head"><div><h2>Score a transaction</h2><p class="muted">Enter simulated payment details.</p></div><button type="button" class="ghost" id="closeModal">✕</button></div>
+<div class="form-grid"><label>Customer ID<input name="customerId" required value="CUS-5001"></label><label>Amount (INR)<input name="amount" type="number" min="1" required value="82000"></label><label>Currency<input name="currency" required value="INR"></label><label>Merchant<input name="merchant" required value="Online Electronics"></label><label>Country code<input name="country" required value="IN"></label><label>Device ID<input name="deviceId" required value="DEV-NEW-500"></label></div>
+<label class="check"><input name="newDevice" type="checkbox" checked> New device</label><label class="check"><input name="international" type="checkbox"> International transaction</label><button type="submit">Calculate risk score</button><p id="formError" class="error"></p></form></div>
+<script src="/app.js"></script></body></html>
